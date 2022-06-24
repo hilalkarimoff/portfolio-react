@@ -1,38 +1,265 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+* {
+  font-family: 'Roboto', sans-serif;
+}
+nav{
+  z-index: 9999;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+
+
+
+
+.header-wrapper {
+  position: relative;
+  background-size: cover;
+  height: 100vh;
+  /* background-position: 10% 10%; */
+  background: url('./images/mycomp.jpeg') 60% 40%;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.main-info {
+  position: absolute;
+  top: -250px;
+  left: 0;
+  right: 0;
+  bottom: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.main-info h1 {
+  color:#fff;
+  margin-bottom: 25px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+
+
+.typed-text {
+  font-size: 2rem;
+  color:#fff;
+}
+
+
+@media(max-width:768px) {
+  .main-info h1 {
+      font-size: 1.7rem !important;
+
   }
-  to {
-    transform: rotate(360deg);
+
+  .typed-text {
+      font-size: 1.7rem !important;  
   }
+}
+
+.downloadcv {
+  border: 1px solid var(--primary-red);
+  padding: 0.625rem;
+  margin: 4rem;
+  border-radius: 4px;
+  text-transform: uppercase;
+  color: var(--primary-white);
+}
+
+.downloadcv:hover{
+  text-decoration: none;
+  background-color: var(--primary-hover-red);
+  color: var(--primary-white);
+  transition: .4s ease-in-out;
+}
+
+
+
+
+/* Experience section */
+
+.experience{
+   padding: .7rem;
+ }
+
+.experience-wrapper{
+  text-transform: uppercase;
+  padding: 3.2rem 0 ;
+  position: relative; 
+  overflow: hidden;
+}
+
+.experience h1{
+  color: orange;
+}
+
+.experience-wrapper::before{
+  position: absolute;
+  top: 0;
+  left: 50%;
+  content: '';
+  width: .125rem;
+  height: 100%;
+  background: grey;
+  
+ 
+}
+
+.timeline-block{
+  width: 45.9% ;
+  display: flex;
+  
+  justify-content: space-between;
+  clear: both;
+ 
+
+}
+
+.timeline-block-right{
+   float: right;
+}
+
+.timeline-block-left{
+  float: left;
+  direction: rtl;
+}
+
+.marker{
+  width: 1rem ;
+  height: 1rem ;
+  border: .3125rem solid #000;
+  background-color: orange;
+  border-radius: 50%;
+  z-index: 3;
+  margin-top: .625rem;
+}
+
+.timeline-content {
+  width: 95%;
+  padding: 0 0.9375rem;
+  color: gray;
+}
+
+@media(max-width:765px){
+  .experience .content{
+    padding-left: 0;
+  }
+
+  .experience::before{
+    left: .5rem;
+    margin-bottom: 2.875rem;
+  }
+  .timeline-block-right{
+    float: none;
+    width: 100%;
+  }
+  .timeline-block-left{
+    float: none;
+    direction: ltr;
+    width: 100%;
+  }
+
+  .experience-wrapper::before{
+    position: absolute;
+    top: 0;
+    left: 1.2%;
+    content: '';
+    width: .125rem;
+    height: 100%;
+    background: grey;
+    
+   
+  }
+}
+
+.photo-wrap{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+.profile-image{
+  width: 12rem;
+  height: 12rem;
+  border-radius: 50%;
+  border: 1px solid orange;
+  padding: .3rem;
+  object-fit: cover;
+}
+
+.about-heading{
+   color: orange;
+   font-size: 2rem;
+   text-transform: uppercase;
+}
+
+@media(max-width:768px){
+  .about-heading{
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .p-text{
+    text-align: justify;
+  }
+}
+
+.services{
+  background: rgb(246, 244, 244);
+  text-align: center;
+  padding-bottom: 2rem;
+}
+
+.services h1{
+  text-transform: uppercase;
+}
+
+.services .circle{
+  position: relative;
+  margin: 0.0375rem auto;
+  background-color: orange;
+  width: 3.125rem;
+  height: 3.125rem;
+  border-radius: 50%;
+}
+
+.services .circle .icon{
+  font-size: 1.4rem;
+  color: #fff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.services .box{
+  background-color: #fff;
+  border-bottom: 0.3125rem solid orange;
+  padding: 0.625rem;
+  margin-bottom: 1.875rem ;
+  height: 20rem;
+  transition: all 7s ease-in-out;
+}
+
+.box h2{
+  margin-top: 2.1rem;
+}
+
+.services .box:hover{
+  cursor: pointer;
+  background: orange;
+  border-bottom: 0.3125rem solid #000;
+}
+
+.services .box:hover .icon{
+  color: #000;
+}
+
+.services .box:hover .circle{
+  color: #fff;
+}
+
+.resize {
+  resize: none;
+}
+
+input {
+  margin-bottom: .5rem;
 }
